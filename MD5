@@ -1,4 +1,4 @@
-f6389b4794d6148f8b6c9763b39d1973 *DESCRIPTION
+bf8a196f81fba0bc9cadcfbfac874336 *DESCRIPTION
 4330faeef987193f2ce51fefe48c4702 *NAMESPACE
 8d73897f986cc3ae63253f6879dcc902 *NEWS.md
 d81a29a879eeedd65816c400d346a58f *R/get_author_info.R
@@ -20,7 +20,7 @@ f2a9f0588209d7e224d635ab22260ee8 *README.md
 e3f509d737c038cb65f9a70953d914c3 *build/vignette.rds
 59ee9a88e0c1f8760d5f2f490e0e232b *inst/doc/Intro_to_Goodreader.R
 243836b581703a7db1d68bf7261f82d3 *inst/doc/Intro_to_Goodreader.Rmd
-d74f839f74af26d59e4e41e9e5de8968 *inst/doc/Intro_to_Goodreader.html
+6bc9fbefeaf5d80c7abd23823cbba1cd *inst/doc/Intro_to_Goodreader.html
 b8d74e9ff5713edd5f2fa61cc279f74e *inst/extdata/afinn.rds
 9247c4d82fad143cfbaa784730dcc35e *inst/extdata/bing.rds
 f22d93dafe29dff4ae9de2633b627850 *inst/extdata/bookids.txt

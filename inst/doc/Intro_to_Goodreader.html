@@ -224,13 +224,13 @@ summary(ave_sentiment)
 <p>Apply topic modeling to the reviews data:</p>
 <pre><code class="language-r">reviews_topic &lt;- model_topics(parent_bookreviews, num_topics = 3, num_terms = 10, english_only = TRUE)
 #&gt; Topic 1:  
-#&gt; kid, think, like, will, just, time, make, realli, dont, child 
+#&gt; parent, children, need, one, way, good, get, work, dont, give 
 #&gt; 
 #&gt; Topic 2:  
-#&gt; book, parent, read, say, mani, also, one, thing, french, lot 
+#&gt; parent, child, book, emot, feel, help, also, can, children, use 
 #&gt; 
 #&gt; Topic 3:  
-#&gt; children, child, parent, need, emot, help, feel, can, give, work
+#&gt; book, just, kid, think, read, like, time, say, realli, much
 </code></pre>
 <p>Plot the top terms by topic:</p>
 <pre><code class="language-r">plot_topic_terms(reviews_topic)
