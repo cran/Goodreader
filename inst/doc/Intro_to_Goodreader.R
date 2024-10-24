@@ -4,8 +4,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   warning = FALSE, 
   message = FALSE,
-  out.width='\\textwidth', fig.height = 4, fig.width = 5, fig.align='center',
-  fig.path = "/man/figures/"
+  out.width='\\textwidth', fig.height = 4, fig.width = 5, fig.align='center'
 )
 
 
@@ -15,8 +14,8 @@ knitr::opts_chunk$set(
 ## -----------------------------------------------------------------------------
 library(Goodreader)
 
-## -----------------------------------------------------------------------------
-parent_df <- search_goodreads(search_term = "parenting", search_in = "title", num_books = 10, sort_by = "ratings")
+## ----eval = FALSE-------------------------------------------------------------
+#  parent_df <- search_goodreads(search_term = "parenting", search_in = "title", num_books = 10, sort_by = "ratings")
 
 ## ----eval = FALSE-------------------------------------------------------------
 #  summary(parent_df)
@@ -39,21 +38,31 @@ parent_df <- search_goodreads(search_term = "parenting", search_in = "title", nu
 ## ----eval = FALSE-------------------------------------------------------------
 #  search_goodreads(search_term = "J.K. Rowling", search_in = "author", num_books = 5, sort_by = "published_year")
 
-## -----------------------------------------------------------------------------
-get_book_ids(input_data = parent_df, file_name = "parent_books.txt") #the book IDs are now stored in a text file named “parent_books”
+## ----eval = FALSE-------------------------------------------------------------
+#  get_book_ids(input_data = parent_df, file_name = "parent_books.txt") #the book IDs are now stored in a text file named “parent_books”
 
-## -----------------------------------------------------------------------------
-parent_bookinfo <- scrape_books(book_ids_path = "parent_books.txt", use_parallel = FALSE)
+## ----eval = FALSE-------------------------------------------------------------
+#  parent_bookinfo <- scrape_books(book_ids_path = "parent_books.txt", use_parallel = FALSE)
 
-## -----------------------------------------------------------------------------
-parent_bookreviews <- scrape_reviews(book_ids_path = "parent_books.txt", num_reviews = 10, use_parallel = FALSE) #users can also turn on parallel process to speed up the process
+## ----eval = FALSE-------------------------------------------------------------
+#  parent_bookreviews <- scrape_reviews(book_ids_path = "parent_books.txt", num_reviews = 10, use_parallel = FALSE) #users can also turn on parallel process to speed up the process
 
-## -----------------------------------------------------------------------------
-sentiment_results <- analyze_sentiment(parent_bookreviews, lexicon = "afinn")
+## ----eval = FALSE-------------------------------------------------------------
+#  sentiment_results <- analyze_sentiment(parent_bookreviews, lexicon = "afinn")
 
-## -----------------------------------------------------------------------------
-ave_sentiment <- average_book_sentiment(sentiment_results)
-summary(ave_sentiment)
+## ----eval = FALSE-------------------------------------------------------------
+#  ave_sentiment <- average_book_sentiment(sentiment_results)
+#  summary(ave_sentiment)
+#  ##    book_id          avg_sentiment
+#  ##  Length:10          Min.   : 4.40
+#  ##  Class :character   1st Qu.: 7.25
+#  ##  Mode  :character   Median :12.86
+#  ##                     Mean   :12.95
+#  ##                     3rd Qu.:14.65
+#  ##                     Max.   :27.30
+
+## ----eval=FALSE---------------------------------------------------------------
+#  sentiment_histogram(sentiment_results)
 
 ## ----echo=FALSE, out.width='400px'--------------------------------------------
 knitr::include_graphics('../man/figures/sentiment_hist.png')
@@ -64,8 +73,16 @@ knitr::include_graphics('../man/figures/sentiment_hist.png')
 ## ----echo=FALSE, out.width='400px'--------------------------------------------
 knitr::include_graphics('../man/figures/sentiment_trend.png')
 
-## -----------------------------------------------------------------------------
-reviews_topic <- model_topics(parent_bookreviews, num_topics = 3, num_terms = 10, english_only = TRUE)
+## ----eval = FALSE-------------------------------------------------------------
+#  reviews_topic <- model_topics(parent_bookreviews, num_topics = 3, num_terms = 10, english_only = TRUE)
+#  ## Topic 1:
+#  ## parent, children, need, one, way, good, get, work, dont, give
+#  ##
+#  ## Topic 2:
+#  ## parent, child, book, emot, feel, help, also, can, children, use
+#  ##
+#  ## Topic 3:
+#  ## book, just, kid, think, read, like, time, say, realli, much
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  plot_topic_terms(reviews_topic)
